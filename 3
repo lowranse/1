@@ -1,0 +1,28 @@
+echo "start"
+am force-stop com.pubg.krmobile
+rm -rf /storage/emulated/0/.backups/com.pubg.krmobile
+cd /storage/emulated/0/
+rm -rf .tbs .turingdebug MidasOversea tencent .turing.dat .zzz QTAudioEngine
+cd /data/data/com.pubg.krmobile/
+rm -rf *app_* cache code_cache databases files no_backup
+touch files
+chmod -R 444 files
+cd /data/media/0/Android/data/com.pubg.krmobile/
+rm -rf cache
+cd /data/media/0/Android/data/com.pubg.krmobile/files/
+rm -rf ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
+rm -rf Logs RoleInfo GameErrorNoRecords
+echo
+am start -a android.intent.action.MAIN -n com.irugratzkuc/.ActivityMainam 
+start -a android.intent.action.MAIN -n com.iqhbamtwcp.fqfuukz/.ActivityMain
+sleep 3
+am start -n com.pubg.krmobile/com.epicgames.ue4.SplashActivity > /dev/null 2>&1
+sleep 6
+cd /data/data/com.pubg.krmobile/lib/
+rm -rf libtersafe.so
+touch libtersafe.so
+chmod -R 444 libtersafe.so
+cd /data/media/0/Android/data/com.pubg.krmobile/
+rm -rf cache
+echo "done"
