@@ -1,0 +1,113 @@
+am force-stop com.tencent.ig
+am force-stop com.android.chrome
+am force-stop com.android.vending
+am force-stop com.android.vending
+am force-stop com.facebook.appmanager
+am force-stop com.facebook.services
+am force-stop com.facebook.system
+am force-stop com.google.android.apps.translate
+am force-stop com.google.android.gm
+am force-stop com.google.android.gms
+am force-stop com.google.android.keep
+am force-stop com.google.android.play.games
+am force-stop com.google.android.youtube
+
+sleep 1
+
+svc wifi enable
+svc data enable
+
+
+cd /data/misc/profiles/cur/0/
+rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+chmod -R 700 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+
+cd /data/misc/profiles/ref/
+rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+chmod -R 770 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+
+cd /data/user_de/0/
+rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+chmod -R 700 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+
+cd /storage/emulated/0/
+rm -rf .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+touch .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+chattr +i .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+
+cd /storage/emulated/0/Android/
+rm -rf .system_android_l2 > /dev/null 2>&1
+touch .system_android_l2 > /dev/null 2>&1
+chattr +i .system_android_l2 > /dev/null 2>&1
+
+cd /data/data/com.tencent.ig/
+rm -rf *app_* cache code_cache databases files no_backup > /dev/null 2>&1
+touch cache code_cache files no_backup > /dev/null 2>&1
+chmod -R 511 cache code_cache files no_backup > /dev/null 2>&1
+
+cd /data/data/com.tencent.ig/shared_prefs/
+chattr -R +i device_id.xml > /dev/null 2>&1
+rm -rf *  > /dev/null 2>&1
+chattr -R -i device_id.xml > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/
+rm -rf cache > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/files/
+rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/
+rm -rf Engine "Epic Games" > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
+chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+rm -rf *.ini > /dev/null 2>&1
+chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
+rm -rf ImageDownload Logs Pandora PufferTmpDir rawdata RoleInfo TableDatas UpdateInfo GameErrorNoRecords  > /dev/null 2>&1
+
+sleep 1
+
+cd /data/data/com.tencent.ig/lib/
+rm -rf libgamemaster.so  > /dev/null 2>&1
+chmod -R 444 *.so  > /dev/null 2>&1
+sleep 1
+am start -a android.intent.action.MAIN -n com.kmurinivnyk/.ActivityMain
+sleep 3
+am start -n com.tencent.ig/com.epicgames.ue4.SplashActivity > /dev/null 2>&1
+sleep 7
+cd /data/data/com.tencent.ig/lib/
+rm -rf libtersafe.so > /dev/null 2>&1
+touch libtersafe.so > /dev/null 2>&1
+chmod -R 444 libtersafe.so > /dev/null 2>&1
+sleep 10
+cd /data/data/com.tencent.ig/lib/
+rm -rf libcubehawk.so > /dev/null 2>&1
+touch libcubehawk.so > /dev/null 2>&1
+chmod -R 444 libcubehawk.so > /dev/null 2>&1
+cd /data/data/com.tencent.ig/
+rm -rf *app_* databases lib > /dev/null 2>&1
+touch databases lib > /dev/null 2>&1
+chmod -R 444 databases lib > /dev/null 2>&1
+cd /data/data/com.tencent.ig/shared_prefs/
+chattr -R +i device_id.xml > /dev/null 2>&1
+rm -rf *  > /dev/null 2>&1
+chattr -R -i device_id.xml > /dev/null 2>&1
+cd /data/media/0/Android/data/com.tencent.ig/
+rm -rf cache > /dev/null 2>&1
+cd /data/media/0/Android/data/com.tencent.ig/files/
+rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/
+rm -rf Engine "Epic Games" > /dev/null 2>&1
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
+chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+rm -rf *.ini > /dev/null 2>&1
+chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
+chattr -R +i *.sav > /dev/null 2>&1
+rm -rf *  > /dev/null 2>&1
+chattr -R -i *.sav > /dev/null 2>&1
