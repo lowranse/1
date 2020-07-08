@@ -1,0 +1,48 @@
+svc data enable
+am force-stop com.kmurinivnyk
+am force-stop com.pubg.krmobile
+am force-stop com.android.chrome
+am force-stop com.android.vending
+am force-stop com.android.vending
+am force-stop com.facebook.appmanager
+am force-stop com.facebook.services
+am force-stop com.facebook.system
+am force-stop com.google.android.apps.translate
+am force-stop com.google.android.gm
+am force-stop com.google.android.gms
+am force-stop com.google.android.keep
+am force-stop com.google.android.play.games
+am force-stop com.google.android.youtube
+sleep 1
+cd /data/misc/profiles/cur/0/
+rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+cd /data/misc/profiles/ref/
+rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+cd /data/user_de/0/
+rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+cd /storage/emulated/0/
+chattr -i .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+rm -rf .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+cd /storage/emulated/0/Android/
+chattr -i .system_android_l2 > /dev/null 2>&1
+rm -rf .system_android_l2 > /dev/null 2>&1
+cd /data/data/com.pubg.krmobile/
+rm -rf *app_* cache code_cache databases files lib no_backup > /dev/null 2>&1
+cd /data/data/com.pubg.krmobile/shared_prefs/
+chattr -R +i device_id.xml > /dev/null 2>&1
+rm -rf *  > /dev/null 2>&1
+chattr -R -i device_id.xml > /dev/null 2>&1
+cd /data/media/0/Android/data/com.pubg.krmobile/
+rm -rf cache > /dev/null 2>&1
+cd /data/media/0/Android/data/com.pubg.krmobile/files/
+rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/
+rm -rf Engine "Epic Games" > /dev/null 2>&1
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
+chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+rm -rf *.ini > /dev/null 2>&1
+chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
+rm -rf ImageDownload Logs Pandora PufferTmpDir rawdata RoleInfo TableDatas UpdateInfo GameErrorNoRecords  > /dev/null 2>&1
+pm install -r /data/app/*com.pubg.krmobile*/base.apk > /dev/null 2>&1
+echo "done"
