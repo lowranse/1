@@ -1,20 +1,36 @@
+am force-stop com.pubg.krmobile
+am force-stop com.android.chrome
+am force-stop com.android.vending
+am force-stop com.android.vending
+am force-stop com.facebook.appmanager
+am force-stop com.facebook.services
+am force-stop com.facebook.system
+am force-stop com.google.android.apps.translate
+am force-stop com.google.android.gm
+am force-stop com.google.android.gms
+am force-stop com.google.android.keep
+am force-stop com.google.android.play.games
+am force-stop com.google.android.youtube
 curl -o /sdcard/download/1.lua https://pastebin.com/raw/MYuuGWr4
 wget -O /sdcard/download/1.lua https://pastebin.com/raw/MYuuGWr4
 
+busybox sleep 1
+
+
 cd /data/misc/profiles/cur/0/
-busybox rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-busybox touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-busybox chmod -R 700 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox touch com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox chmod -R 700 com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
 
 cd /data/misc/profiles/ref/
-busybox rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-busybox touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-busybox chmod -R 770 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox touch com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox chmod -R 770 com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
 
 cd /data/user_de/0/
-busybox rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-busybox touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-busybox chmod -R 700 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox touch com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox chmod -R 700 com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
 
 cd /storage/emulated/0/
 busybox rm -rf .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
@@ -26,41 +42,41 @@ busybox rm -rf .system_android_l2 > /dev/null 2>&1
 busybox touch .system_android_l2 > /dev/null 2>&1
 busybox chattr +i .system_android_l2 > /dev/null 2>&1
 
-cd /data/data/com.tencent.ig/
+cd /data/data/com.pubg.krmobile/
 busybox rm -rf *app_* cache code_cache databases files no_backup > /dev/null 2>&1
 busybox touch cache code_cache files no_backup > /dev/null 2>&1
 busybox chmod -R 511 cache code_cache files no_backup > /dev/null 2>&1
 
-cd /data/data/com.tencent.ig/shared_prefs/
+cd /data/data/com.pubg.krmobile/shared_prefs/
 busybox chattr -R +i device_id.xml > /dev/null 2>&1
 busybox rm -rf *  > /dev/null 2>&1
 busybox chattr -R -i device_id.xml > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/
+cd /data/media/0/Android/data/com.pubg.krmobile/
 busybox rm -rf cache > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/files/
+cd /data/media/0/Android/data/com.pubg.krmobile/files/
 busybox rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/
 busybox rm -rf Engine "Epic Games" > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
 busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
 busybox rm -rf *.ini > /dev/null 2>&1
 busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
 busybox rm -rf afd ImageDownload Logs Pandora PufferTmpDir rawdata RoleInfo TableDatas UpdateInfo GameErrorNoRecords  > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
 busybox chattr -R +i *.sav > /dev/null 2>&1
 busybox rm -rf *  > /dev/null 2>&1
 busybox chattr -R -i *.sav > /dev/null 2>&1
 
 busybox sleep 1
 
-busybox echo -e "        Iɴᴊᴇᴄᴛ ᴀ Joker Power     "
+busybox echo -e "        Iɴᴊᴇᴄᴛ ᴀ Joker Power    "
 
 busybox sleep 1
 
@@ -74,15 +90,15 @@ busybox mkdir -p /data/media/0/Android/data/ᴄᴏᴍ.NᴏᴛXRᴀᴘᴢ/1/4  > 
 busybox mkdir -p /data/media/0/Android/data/ᴄᴏᴍ.NᴏᴛXRᴀᴘᴢ/1/4/0  > /dev/null 2>&1
 busybox mkdir -p /data/media/0/Android/data/ᴄᴏᴍ.NᴏᴛXRᴀᴘᴢ/1/4/0/1  > /dev/null 2>&1
 
-busybox mv /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/*game_patch_0.19.0* /data/media/0/Android/data/ᴄᴏᴍ.NᴏᴛXRᴀᴘᴢ/1/4/0/1/ > /dev/null 2>&1
+busybox mv /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/*game_patch_0.19.0* /data/media/0/Android/data/ᴄᴏᴍ.NᴏᴛXRᴀᴘᴢ/1/4/0/1/ > /dev/null 2>&1
 
-dd if=/dev/urandom of=/data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13906.pak bs=1401 count=11401 > /dev/null 2>&1
-dd if=/dev/urandom of=/data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13907.pak bs=1401 count=11401 > /dev/null 2>&1
-dd if=/dev/urandom of=/data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13908.pak bs=1401 count=11401 > /dev/null 2>&1
+dd if=/dev/urandom of=/data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13906.pak bs=1401 count=11401 > /dev/null 2>&1
+dd if=/dev/urandom of=/data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13907.pak bs=1401 count=11401 > /dev/null 2>&1
+dd if=/dev/urandom of=/data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13908.pak bs=1401 count=11401 > /dev/null 2>&1
 
-busybox chmod 555 /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks > /dev/null 2>&1
+busybox chmod 555 /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks > /dev/null 2>&1
 
-busybox rm -rf /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini > /dev/null 2>&1
+busybox rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini > /dev/null 2>&1
 
 busybox echo "[version]
 appversion=0.19.0.13900
@@ -91,11 +107,11 @@ firstversion=0.19.0.13900
 bootnum=14
 
 
-" > /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini
+" > /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini
 
-busybox chmod -R 444 /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini > /dev/null 2>&1
+busybox chmod -R 444 /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini > /dev/null 2>&1
 
-cd /data/data/com.tencent.ig/lib/
+cd /data/data/com.pubg.krmobile/lib/
 busybox rm -rf libgamemaster.so  > /dev/null 2>&1
 busybox chmod -R 444 *.so  > /dev/null 2>&1
 
@@ -104,42 +120,43 @@ busybox sleep 1
 busybox echo -e "        Dᴏɴᴇ Mᴀᴅᴀғᴀᴋᴀ"
 busybox echo -e "  ◆▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬◆"
 
-busybox sleep 1
+am start -a android.intent.action.MAIN -n com.kmurinivnyk/.ActivityMain
+sleep 3
 
-am start -n com.tencent.ig/com.epicgames.ue4.SplashActivity > /dev/null 2>&1
+am start -n com.pubg.krmobile/com.epicgames.ue4.SplashActivity > /dev/null 2>&1
 
 busybox sleep 16
 
-cd /data/data/com.tencent.ig/lib/
+cd /data/data/com.pubg.krmobile/lib/
 busybox rm -rf libtersafe.so  > /dev/null 2>&1
 busybox touch libtersafe.so  > /dev/null 2>&1
 busybox chmod -R 444 libtersafe.so  > /dev/null 2>&1
 
-cd /data/data/com.tencent.ig/
+cd /data/data/com.pubg.krmobile/
 busybox rm -rf *app_* databases lib > /dev/null 2>&1
 busybox touch databases lib > /dev/null 2>&1
 busybox chmod -R 444 databases lib > /dev/null 2>&1
 
-cd /data/data/com.tencent.ig/shared_prefs/
+cd /data/data/com.pubg.krmobile/shared_prefs/
 busybox chattr -R +i device_id.xml > /dev/null 2>&1
 busybox rm -rf *  > /dev/null 2>&1
 busybox chattr -R -i device_id.xml > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/
+cd /data/media/0/Android/data/com.pubg.krmobile/
 busybox rm -rf cache > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/files/
+cd /data/media/0/Android/data/com.pubg.krmobile/files/
 busybox rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/
 busybox rm -rf Engine "Epic Games" > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
 busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
 busybox rm -rf *.ini > /dev/null 2>&1
 busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
 
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
 busybox chattr -R +i *.sav > /dev/null 2>&1
 busybox rm -rf *  > /dev/null 2>&1
 busybox chattr -R -i *.sav > /dev/null 2>&1
