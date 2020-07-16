@@ -1,6 +1,20 @@
 am force-stop com.pubg.krmobile
 am force-stop com.android.chrome
+if [ -e "/sdcard/Android/data/a" ];
+then
+echo 
+else
+touch /sdcard/Android/data/a
+rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini > /dev/null 2>&1
+echo "[version]
+appversion=0.19.0.13900
+srcversion=0.19.0.13908
+firstversion=0.19.0.13900
+bootnum=14
+" > /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini
 
+chmod -R 444 /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini
+fi
 cd /data/misc/profiles/cur/0/
 rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
 touch com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
