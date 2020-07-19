@@ -29,21 +29,10 @@ cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/Sh
 chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
 rm -rf *.ini > /dev/null 2>&1
 chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
-chmod 775 /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks
-mv /data/media/0/Android/data/ᴄᴏᴍ.NᴏᴛXRᴀᴘᴢ/1/4/0/1/* /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/
-rm -rf /data/media/0/Android/data/ᴄᴏᴍ.NᴏᴛXRᴀᴘᴢ
 cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
 rm -rf afd ImageDownload Logs Pandora PufferTmpDir rawdata RoleInfo TableDatas UpdateInfo GameErrorNoRecords  > /dev/null 2>&1
 cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
 chattr -R +i *.sav > /dev/null 2>&1
 rm -rf *  > /dev/null 2>&1
 chattr -R -i *.sav > /dev/null 2>&1
-rm -rf /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini > /dev/null 2>&1
-echo "[version]
-appversion=0.19.0.13900
-srcversion=0.19.0.13908
-firstversion=0.19.0.13900
-bootnum=4
-" > /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini
-chmod -R 775 /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini > /dev/null 2>&1
 pm install -r /data/app/*com.tencent.ig*/base.apk > /dev/null 2>&1
