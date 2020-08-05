@@ -111,8 +111,6 @@ rm -rf /data/data/com.pubg.krmobile/shared_prefs/com.google.android.gms.appid.xm
 iptables --flush
 rm -rf /data/media/0/QTAudioEngine /data/media/0/.fe_tmp /data/media/0/.profig.os /data/media/0/MidasOversea /data/media/0/.backups /data/media/0/tencent &>/dev/null
 touch /data/media/0/QTAudioEngine /data/media/0/MidasOversea /data/media/0/.backups /data/media/0/tencent &>/dev/null
-dd if=/dev/urandom of=/data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13915.pak bs=$RANDOM count=660 &> /dev/null
-dd if=/dev/urandom of=/data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/core_patch_0.19.0.13915.pak bs=$RANDOM count=760 &> /dev/null
 chmod 000 /data/data/com.pubg.krmobile/files
 chmod -R 000 /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Logs &> /dev/null
 chmod -R 000 /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Pandora &> /dev/null
@@ -130,7 +128,3 @@ chmod -R 755 /data/data/com.pubg.krmobile/lib/libtersafe.so
 chmod -R 755 /data/data/com.pubg.krmobile/lib/libtprt.so
 chmod -R 755 /data/data/com.pubg.krmobile/lib/libgcloud.so
 
-sleep 30
-iptables -I INPUT -s gfm.qq.com -j DROP &>/dev/null
-iptables -I INPUT -s report.syzs.qq.com -j DROP &>/dev/null
-iptables -I INPUT -s sy.guanjia.qq.com -j DROP &>/dev/null
