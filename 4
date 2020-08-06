@@ -1,38 +1,58 @@
+
+echo "start"
 am force-stop com.pubg.krmobile
-am force-stop com.android.chrome
-am force-stop com.android.vending
-am force-stop com.android.vending
-am force-stop com.facebook.appmanager
-am force-stop com.facebook.services
-am force-stop com.facebook.system
-am force-stop com.google.android.apps.translate
-am force-stop com.google.android.gm
-am force-stop com.google.android.gms
-am force-stop com.google.android.keep
-am force-stop com.google.android.play.games
-am force-stop com.google.android.youtube
 am force-stop com.kmurinivnyk
-sleep 1
+cd /data/misc/profiles/cur/0/
+busybox rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
 
-iptables --flush &> /dev/null
-ip6tables --flush &> /dev/null
+cd /data/misc/profiles/ref/
+busybox rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
 
-rm -rf /data/media/0/QTAudioEngine /data/media/0/.fe_tmp /data/media/0/.profig.os /data/media/0/MidasOversea /data/media/0/.backups /data/media/0/tencent &>/dev/null
-iptables --flush
-sleep 1
-chmod -R 755 /data/data/com.pubg.krmobile/lib/*
-rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13915.pak &> /dev/null
-rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/core_patch_0.19.0.13915.pak &> /dev/null
-rm -rf /data/data/com.pubg.krmobile/app_bugly &> /dev/null
-rm -rf /data/data/com.pubg.krmobile/app_crashrecord &> /dev/null
-rm -rf /data/data/com.pubg.krmobile/cache &> /dev/null
-rm -rf /data/data/com.pubg.krmobile/code_cache &> /dev/null
-rm -rf /data/data/com.pubg.krmobile/files &> /dev/null
-rm -rf /data/data/com.pubg.krmobile/no_backup &> /dev/null
-rm -rf /data/media/0/Android/data/com.pubg.krmobile/cache &> /dev/null
-rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Logs &> /dev/null
-rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/UpdateInfo &> /dev/null
-rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/puffer_temp &> /dev/null
-rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/PufferFileList.json &> /dev/null
-rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/puffer_res.eifs &> /dev/null
+cd /data/user_de/0/
+busybox rm -rf com.pubg.krmobile com.tencent.soter.soterserver  > /dev/null 2>&1
+
+cd /storage/emulated/0/
+busybox chattr -i .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+busybox rm -rf .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+
+cd /storage/emulated/0/Android/
+busybox chattr -i .system_android_l2 > /dev/null 2>&1
+busybox rm -rf .system_android_l2 > /dev/null 2>&1
+
+cd /data/data/com.pubg.krmobile/
+busybox rm -rf *app_* cache code_cache databases files lib no_backup > /dev/null 2>&1
+
+cd /data/data/com.pubg.krmobile/shared_prefs/
+busybox chattr -R +i device_id.xml > /dev/null 2>&1
+busybox rm -rf *  > /dev/null 2>&1
+busybox chattr -R -i device_id.xml > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.pubg.krmobile/
+busybox rm -rf cache > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.pubg.krmobile/files/
+busybox rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/
+busybox rm -rf Engine "Epic Games" > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
+busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+busybox rm -rf *.ini > /dev/null 2>&1
+busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/
+busybox rm -rf puffer_temp game_patch_0.19.0.13900.pak game_patch_0.19.0.13902.pak game_patch_0.19.0.13904.pak puffer_res.eifs PufferFileList.json
+
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
+busybox rm -rf afd ImageDownload Logs Pandora PufferTmpDir rawdata RoleInfo TableDatas UpdateInfo GameErrorNoRecords  > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
+busybox chattr -R +i *.sav > /dev/null 2>&1
+busybox rm -rf *  > /dev/null 2>&1
+busybox chattr -R -i *.sav > /dev/null 2>&1
+
 pm install -r /data/app/*com.pubg.krmobile*/base.apk > /dev/null 2>&1
+
+busybox echo -e "pubg korea stopped"
+echo "done"
