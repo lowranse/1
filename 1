@@ -1,142 +1,93 @@
+echo "start"
 am force-stop com.tencent.ig
 am force-stop com.kmurinivnyk
-echo "fix********"
-if [ -e "/sdcard/Android/data/z" ];
-then
-echo 
-else
-touch /sdcard/Android/data/z
+cd /data/misc/profiles/cur/0/
+busybox rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox chmod -R 700 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+
+cd /data/misc/profiles/ref/
+busybox rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox chmod -R 770 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+
+cd /data/user_de/0/
+busybox rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox chmod -R 700 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+
+cd /storage/emulated/0/
+busybox rm -rf .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+busybox touch .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+busybox chattr +i .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
+
+cd /storage/emulated/0/Android/
+busybox rm -rf .system_android_l2 > /dev/null 2>&1
+busybox touch .system_android_l2 > /dev/null 2>&1
+busybox chattr +i .system_android_l2 > /dev/null 2>&1
+
+cd /data/data/com.tencent.ig/
+busybox rm -rf *app_* cache code_cache databases files no_backup > /dev/null 2>&1
+busybox touch cache code_cache files no_backup > /dev/null 2>&1
+busybox chmod -R 511 cache code_cache files no_backup > /dev/null 2>&1
+
+cd /data/data/com.tencent.ig/shared_prefs/
+busybox chattr -R +i device_id.xml > /dev/null 2>&1
+busybox rm -rf *  > /dev/null 2>&1
+busybox chattr -R -i device_id.xml > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/
+busybox rm -rf cache > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/files/
+busybox rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/
+busybox rm -rf Engine "Epic Games" > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
+busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+busybox rm -rf *.ini > /dev/null 2>&1
+busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
+busybox rm -rf afd ImageDownload Logs Pandora PufferTmpDir rawdata RoleInfo TableDatas UpdateInfo GameErrorNoRecords  > /dev/null 2>&1
+busybox mkdir afd Logs Pandora RoleInfo  > /dev/null 2>&1
+busybox touch GameErrorNoRecords  > /dev/null 2>&1
+busybox chmod -R 555 afd Logs Pandora PufferTmpDir rawdata RoleInfo GameErrorNoRecords  > /dev/null 2>&1
+
+cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
+busybox chattr -R +i *.sav > /dev/null 2>&1
+busybox rm -rf *  > /dev/null 2>&1
+busybox chattr -R -i *.sav > /dev/null 2>&1
+
+busybox sleep 1
+
+busybox echo -e "        SAMARA VIP "
+
+busybox sleep 1
+
+busybox echo 0 > /proc/sys/fs/inotify/max_queued_events
+busybox echo 0 > /proc/sys/fs/inotify/max_user_instances
+busybox echo 0 > /proc/sys/fs/inotify/max_user_watches
+
 cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/
-rm -rf puffer_temp game_patch_0.19.0.13900.pak game_patch_0.19.0.13902.pak game_patch_0.19.0.13904.pak puffer_res.eifs PufferFileList.json
-cd /data/misc/profiles/cur/0/
-rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
+busybox rm -rf puffer_temp game_patch_0.19.0.13900.pak game_patch_0.19.0.13902.pak game_patch_0.19.0.13904.pak puffer_res.eifs PufferFileList.json
 
-cd /data/misc/profiles/ref/
-rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-
-cd /data/user_de/0/
-rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-
-cd /storage/emulated/0/
-chattr -i .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
-rm -rf .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
-
-cd /storage/emulated/0/Android/
-chattr -i .system_android_l2 > /dev/null 2>&1
-rm -rf .system_android_l2 > /dev/null 2>&1
-
-cd /data/data/com.tencent.ig/
-rm -rf *app_* cache code_cache databases files lib no_backup > /dev/null 2>&1
-
-cd /data/data/com.tencent.ig/shared_prefs/
-chattr -R +i device_id.xml > /dev/null 2>&1
-rm -rf *  > /dev/null 2>&1
-chattr -R -i device_id.xml > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/
-rm -rf cache > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/files/
-rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/
-rm -rf Engine "Epic Games" > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
-chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
-rm -rf *.ini > /dev/null 2>&1
-chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
-
-chmod 775 /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks
-
-
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
-rm -rf afd ImageDownload Logs Pandora PufferTmpDir rawdata RoleInfo TableDatas UpdateInfo GameErrorNoRecords  > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
-chattr -R +i *.sav > /dev/null 2>&1
-rm -rf *  > /dev/null 2>&1
-chattr -R -i *.sav > /dev/null 2>&1
-chmod -R 775 /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SrcVersion.ini > /dev/null 2>&1
-
-fi
-echo "done"
-cd /data/misc/profiles/cur/0/
-rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-chmod -R 700 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-
-cd /data/misc/profiles/ref/
-rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-chmod -R 770 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-
-cd /data/user_de/0/
-rm -rf com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-touch com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-chmod -R 700 com.tencent.ig com.tencent.soter.soterserver  > /dev/null 2>&1
-
-cd /storage/emulated/0/
-rm -rf .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
-touch .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
-chattr +i .backups .tbs .turingdebug baidu MidasOversea tencent .turing.dat .zzz QTAudioEngine > /dev/null 2>&1
-
-cd /storage/emulated/0/Android/
-rm -rf .system_android_l2 > /dev/null 2>&1
-touch .system_android_l2 > /dev/null 2>&1
-chattr +i .system_android_l2 > /dev/null 2>&1
-
-cd /data/data/com.tencent.ig/
-rm -rf *app_* cache code_cache databases files no_backup > /dev/null 2>&1
-touch cache code_cache files no_backup > /dev/null 2>&1
-chmod -R 000 cache code_cache files no_backup > /dev/null 2>&1
-
-cd /data/data/com.tencent.ig/shared_prefs/
-chattr -R +i device_id.xml > /dev/null 2>&1
-rm -rf *  > /dev/null 2>&1
-chattr -R -i device_id.xml > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/
-rm -rf cache > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/files/
-rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/
-rm -rf Engine "Epic Games" > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
-chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
-rm -rf *.ini > /dev/null 2>&1
-chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
-rm -rf afd ImageDownload Logs Pandora PufferTmpDir rawdata RoleInfo TableDatas UpdateInfo GameErrorNoRecords  > /dev/null 2>&1
-
-cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
-chattr -R +i *.sav > /dev/null 2>&1
-rm -rf *  > /dev/null 2>&1
-chattr -R -i *.sav > /dev/null 2>&1
-
-sleep 1
-
-echo -e "        Iɴᴊᴇᴄᴛ ᴀ Joker Power"
-
-sleep 1
-
-echo 0 > /proc/sys/fs/inotify/max_queued_events
-echo 0 > /proc/sys/fs/inotify/max_user_instances
-echo 0 > /proc/sys/fs/inotify/max_user_watches
+dd if=/dev/urandom of=/data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13900.pak bs=1401 count=11401 > /dev/null 2>&1
+dd if=/dev/urandom of=/data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13902.pak bs=1401 count=11401 > /dev/null 2>&1
+dd if=/dev/urandom of=/data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/game_patch_0.19.0.13904.pak bs=1401 count=11401 > /dev/null 2>&1
 
 cd /data/data/com.tencent.ig/lib/
-rm -rf libBugly.so libgamemaster.so  > /dev/null 2>&1
-chmod -R 444 *.so  > /dev/null 2>&1
+busybox rm -rf libgamemaster.so  > /dev/null 2>&1
+busybox chmod -R 444 *.so  > /dev/null 2>&1
 
-sleep 1
+busybox sleep 1
 
+busybox echo -e "pubg korea"
 
+busybox sleep 1
 
-sleep 1
 am start -a android.intent.action.MAIN -n com.kmurinivnyk/.ActivityMain
 sleep 3
 
@@ -144,38 +95,39 @@ am start -n com.tencent.ig/com.epicgames.ue4.SplashActivity > /dev/null 2>&1
 echo
 curl -o /sdcard/download/1.lua https://pastebin.com/raw/MYuuGWr4
 wget -O /sdcard/download/1.lua https://pastebin.com/raw/MYuuGWr4
+busybox sleep 16
 
-sleep 16
 
 cd /data/data/com.tencent.ig/
-rm -rf *app_* databases lib > /dev/null 2>&1
-touch databases lib > /dev/null 2>&1
-chmod -R 444 databases lib > /dev/null 2>&1
+busybox rm -rf *app_* databases lib > /dev/null 2>&1
+busybox touch databases lib > /dev/null 2>&1
+busybox chmod -R 444 databases lib > /dev/null 2>&1
 
 cd /data/data/com.tencent.ig/shared_prefs/
-chattr -R +i device_id.xml > /dev/null 2>&1
-rm -rf *  > /dev/null 2>&1
-chattr -R -i device_id.xml > /dev/null 2>&1
+busybox chattr -R +i device_id.xml > /dev/null 2>&1
+busybox rm -rf *  > /dev/null 2>&1
+busybox chattr -R -i device_id.xml > /dev/null 2>&1
 
 cd /data/media/0/Android/data/com.tencent.ig/
-rm -rf cache > /dev/null 2>&1
+busybox rm -rf cache > /dev/null 2>&1
 
 cd /data/media/0/Android/data/com.tencent.ig/files/
-rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
+busybox rm -rf .fff .system_android_l2 ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json > /dev/null 2>&1
 
 cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/
-rm -rf Engine "Epic Games" > /dev/null 2>&1
+busybox rm -rf Engine "Epic Games" > /dev/null 2>&1
 
 cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
-chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
-rm -rf *.ini > /dev/null 2>&1
-chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
+busybox rm -rf *.ini > /dev/null 2>&1
+busybox chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
 
 cd /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
-chattr -R +i *.sav > /dev/null 2>&1
-rm -rf *  > /dev/null 2>&1
-chattr -R -i *.sav > /dev/null 2>&1
+busybox chattr -R +i *.sav > /dev/null 2>&1
+busybox rm -rf *  > /dev/null 2>&1
+busybox chattr -R -i *.sav > /dev/null 2>&1
 
-echo 0 > /proc/sys/fs/inotify/max_queued_events
-echo 0 > /proc/sys/fs/inotify/max_user_instances
-echo 0 > /proc/sys/fs/inotify/max_user_watches
+busybox echo 0 > /proc/sys/fs/inotify/max_queued_events
+busybox echo 0 > /proc/sys/fs/inotify/max_user_instances
+busybox echo 0 > /proc/sys/fs/inotify/max_user_watches
+echo "done"
