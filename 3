@@ -1,16 +1,26 @@
-am force-stop com.pubg.krmobile
+
+
+am force-stop com.tencent.ig
 am force-stop com.kmurinivnyk
 rm -rf /storage/emulated/0/Android/obb/tencent
 rm -rf /sdcard/download/1.lua
+sleep 1
+
+echo 0 > /proc/sys/fs/inotify/max_queued_events
+echo 0 > /proc/sys/fs/inotify/max_user_instances
+echo 0 > /proc/sys/fs/inotify/max_user_watches
+
 rm -rf /storage/emulated/0/.backups/com.pubg.krmobile
 
 cd /storage/emulated/0/
 rm -rf .tbs .turingdebug MidasOversea tencent .turing.dat .zzz QTAudioEngine
 
 cd /data/data/com.pubg.krmobile/
-rm -rf *app_* cache code_cache databases files no_backup
-touch files
-chmod -R 444 files
+rm -rf *app_* cache code_cache databases files lib no_backup
+
+chattr +i /data/data/com.pubg.krmobile/shared_prefs/device_id.xml > /dev/null 2>&1
+rm -rf /data/data/com.pubg.krmobile/shared_prefs/* > /dev/null 2>&1
+chattr -i /data/data/com.pubg.krmobile/shared_prefs/device_id.xml > /dev/null 2>&1
 
 cd /data/media/0/Android/data/com.pubg.krmobile/
 rm -rf cache
@@ -21,40 +31,11 @@ rm -rf ca-bundle.pem cacheFile.txt login-identifier.txt vmpcloudconfig.json
 cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
 rm -rf Logs RoleInfo GameErrorNoRecords
 
-cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/
-chattr +i UserCustom.ini UserSettings.ini > /dev/null 2>&1
-
 cd /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/
 chattr -R +i *.sav
 rm -rf *  > /dev/null 2>&1
 chattr -R -i *.sav
 
-sleep 1
+pm install -r /data/app/*com.pubg.krmobile*/base.apk > /dev/null 2>&1
 
-echo -e "        Iɴᴊᴇᴄᴛ ᴀ Cᴜʀsᴇ"
-
-echo 0 > /proc/sys/fs/inotify/max_queued_events
-echo 0 > /proc/sys/fs/inotify/max_user_instances
-echo 0 > /proc/sys/fs/inotify/max_user_watches
-
-
-sleep 1
-am start -a android.intent.action.MAIN -n com.kmurinivnyk/.ActivityMain
-sleep 3
-am start -n com.pubg.krmobile/com.epicgames.ue4.SplashActivity > /dev/null 2>&1
-echo
-curl -o /sdcard/download/1.lua https://pastebin.com/raw/MYuuGWr4
-wget -O /sdcard/download/1.lua https://pastebin.com/raw/MYuuGWr4
-sleep 16
-
-echo 0 > /proc/sys/fs/inotify/max_queued_events
-echo 0 > /proc/sys/fs/inotify/max_user_instances
-echo 0 > /proc/sys/fs/inotify/max_user_watches
-
-cd /data/data/com.pubg.krmobile/lib/
-rm -rf libtersafe.so
-touch libtersafe.so
-chmod -R 444 libtersafe.so
-
-cd /data/media/0/Android/data/com.pubg.krmobile/
-rm -rf cache
+echo 'Done'
