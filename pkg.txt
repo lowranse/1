@@ -1,2 +1,0 @@
-com.adamioan.scriptrunner
-com.tencen.ig
