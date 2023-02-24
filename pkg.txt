@@ -1,3 +1,1 @@
-com.adamioan.scriptrunner
-com.tencen.ig
-bin.mt.plus
+com.snap.cheat
