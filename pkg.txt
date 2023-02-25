@@ -1,4 +1,3 @@
-Com.njjdj.dj
 com.snap.cheat
 
 
