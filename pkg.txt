@@ -1,2 +1,1 @@
-bin.mt.plus
 com.snap.cheat
