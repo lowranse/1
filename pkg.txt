@@ -1,3 +1,2 @@
 com.snap.cheat
-ft727mNdGu
-f1df011e
+True
