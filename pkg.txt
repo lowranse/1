@@ -1,7 +1,0 @@
-com.winner.vip
-com.snap.cheat
-com.shanab.vip
-com.nobel.vip
-com.guevara.vip
-True
-
