@@ -10,3 +10,4 @@ om.molotov.application
 com.sharp.shoter
 com.cobra.vip
 com.bg.vip
+com.army.vip
