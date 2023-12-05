@@ -4,7 +4,6 @@ com.snap.cheat
 com.nobel.vip
 com.sniper.vip
 om.shanab.vip
-com.power.shooter
 com.harhurx.application
 com.lord.plus
 om.molotov.application
