@@ -3,10 +3,10 @@ com.falcon.plus
 com.snap.cheat
 com.nobel.vip
 com.sniper.vip
-om.shanab.vip
+com.shanab.vip
 com.harhurx.application
 com.lord.plus
-om.molotov.application
+com.molotov.application
 com.sharp.shoter
 com.cobra.vip
 com.bg.vip
