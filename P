@@ -11,3 +11,4 @@ com.sharp.shoter
 com.cobra.vip
 com.bg.vip
 com.army.vip
+com.joker.app
